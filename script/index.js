@@ -176,7 +176,7 @@ async function searchFun()
     // console.log(results['results'][0]);
     // console.log(results['results'][0]['title']);
     // console.log(results['results'][0]['poster_path']);
-    if(divLength.children.length==0)
+    if(divLength.children.length===0)
     {
     for(var i=0;i<8;i++)
     {
