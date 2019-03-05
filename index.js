@@ -1,13 +1,11 @@
 async function trendingFun()
 {
-    var response={};
+  
   //var divLength = document.getElementById('container-div');//check clicking count
-    var response = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=afe68439ec0fba4d7521cd1e54369d79');
-    var results = await response.json();   //results array contain the result from tmdb
-    
-    // console.log(results['results'][0]);
-    // console.log(results['results'][0]['title']);
-    // console.log(results['results'][0]['poster_path']);
+    const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=afe68439ec0fba4d7521cd1e54369d79');
+    const results = await response.json();   //results array contain the result from tmdb
+    let trendResult=results;
+  // console.log(trendResult);
     var con = document.getElementById('container-div');
     if(con.children.length==0)
     {
@@ -18,8 +16,9 @@ async function trendingFun()
         divCard.style.color="#000";
         var movieId =results['results'][i]['id'];
         //divCard.href='/html/modal.html';
-        divCard.href='';
-        //divCard.onclick= await createModal.bind(null, movieId);
+        divCard.href='/html/favourites.html';
+        // divCard.onclick= await addtofavourites.bind(null, movieId);
+        divCard.onclick= await addtofavourites.bind(null, trendResult['results'][i]);
        // divCard.onclick = await fun(movieId,results);
        // divCard.href=await fun(movieId);
         divCard.style.textDecoration='none';
@@ -70,21 +69,24 @@ async function trendingFun()
         li.textContent = txt.concat(results['results'][i]['release_date']);
         ul.appendChild(li);
 
-        // var addfavDiv = document.createElement('div');
-        // addfavDiv.style.textAlign='center';
-        // addfavDiv.className = 'card-footer';  // script for div to insert add to favourites button
-        // divCard.appendChild(addfavDiv);
+        var addfavDiv = document.createElement('div');
+        addfavDiv.style.textAlign='center';
+        addfavDiv.className = 'card-footer';  // script for div to insert add to favourites button
+        divCard.appendChild(addfavDiv);
 
-      //   var favButton = document.createElement('BUTTON');
-      //   favButton.className = 'btn btn-warning';
-      //   var text = document.createTextNode('Add to favourites');
-      //   favButton.appendChild(text);
-      //   favButton.id = 'myBtn';
-      //     var movieId =results['results'][i]['id'];
-      //   //var my = document.getElementById('myBtn');
-      //  // console.log(results['results'][i]['id']);
-      //   addfavDiv.appendChild(favButton);
+        var favButton = document.createElement('BUTTON');
+        favButton.className = 'btn btn-warning';
+        var text = document.createTextNode('Add to favourites');
+        favButton.appendChild(text);
+        favButton.id = 'myBtn';
+          var movieId =results['results'][i]['id'];
+        //var my = document.getElementById('myBtn');
+       // console.log(results['results'][i]['id']);
+        addfavDiv.appendChild(favButton);
         //favButton.onclick = await fun(movieId ,results);
+        favButton.onclick= await addtofavourites.bind(null, trendResult,movieId);
+        favButton.href='/html/favourites.html';
+
     }  
   } 
   
@@ -95,7 +97,53 @@ async function trendingFun()
   }
 }   
 
-// async function createModal(id)
+ async function addtofavourites(rst)
+{
+
+  // fetch(`https://api.themoviedb.org/3/movie/404368?api_key=afe68439ec0fba4d7521cd1e54369d79&language=en-US`)
+  // .then(res=>{
+  //   return res.json();
+  // })
+  // .then(movie=>{
+  //   console.log(movie);
+  // })
+  var status = await checkInFavourites(rst['id']);
+   if(status===true)
+  {
+          
+           fetch('http://localhost:3000/favourites',
+           {
+               method: 'POST',
+               body: JSON.stringify(rst),
+               headers: {
+                   'Content-Type': 'application/json'
+               }
+           })
+   }
+    else
+       {
+         alert('already in favourites');
+      }
+
+  }   
+  
+          
+
+
+async function checkInFavourites(id)
+{
+  var res = await fetch('http://localhost:3000/favourites');
+    var rst = await res.json();
+      
+    for(var i=0;i<rst.length;i++)
+    {
+      if(rst[i]['id']===id)
+       return  false;
+     
+    }
+    return true;
+}
+// async function createModal(null,id)
 // {
 //   var res ={};
 //   console.log(id);
@@ -162,7 +210,7 @@ async function trendingFun()
 // }
 async function searchFun()
 {   
-    var response={};
+  
     var divLength = document.getElementById('container-div');//check clicking count
     var search = document.getElementById('search-id');
     var searchText = search.value;
@@ -230,8 +278,9 @@ async function searchFun()
         li.textContent = txt.concat(results['results'][i]['release_date']);
         ul.appendChild(li);
 
-        // var addfavDiv = document.createElement('div');
-        // addfavDiv.style.textAlign='center';
+         var addfavDiv = document.createElement('div');
+        addfavDiv.style.textAlign='center';
+        
         // addfavDiv.className = 'card-footer';  // script for div to insert add to favourites button
         // divCard.appendChild(addfavDiv);
 

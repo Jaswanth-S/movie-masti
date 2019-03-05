@@ -1,0 +1,83 @@
+{
+  "favourites": [
+    {
+      "adult": false,
+      "backdrop_path": "/uUiId6cG32JSRI6RyBQSvQtLjz2.jpg",
+      "genre_ids": [
+        28,
+        12,
+        16,
+        878,
+        35
+      ],
+      "id": 324857,
+      "original_language": "en",
+      "original_title": "Spider-Man: Into the Spider-Verse",
+      "overview": "Miles Morales is juggling his life between being a high school student and being a spider-man. When Wilson \"Kingpin\" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.",
+      "poster_path": "/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+      "release_date": "2018-12-07",
+      "title": "Spider-Man: Into the Spider-Verse",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 2183,
+      "popularity": 270.736
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xcaSYLBhmDzJ6P14bcKe0KTh3QV.jpg",
+      "genre_ids": [
+        18,
+        10402
+      ],
+      "id": 424694,
+      "original_language": "en",
+      "original_title": "Bohemian Rhapsody",
+      "overview": "Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock 'n' roll band Queen in 1970. Hit songs become instant classics. When Mercury's increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.",
+      "poster_path": "/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg",
+      "release_date": "2018-10-24",
+      "title": "Bohemian Rhapsody",
+      "video": false,
+      "vote_average": 8.1,
+      "vote_count": 5767,
+      "popularity": 167.517
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/78PjwaykLY2QqhMfWRDvmfbC6EV.jpg",
+      "genre_ids": [
+        18,
+        35,
+        10402
+      ],
+      "id": 490132,
+      "original_language": "en",
+      "original_title": "Green Book",
+      "overview": "Tony Lip, a bouncer in 1962, is hired to drive pianist Don Shirley on a tour through the Deep South in the days when African Americans, forced to find alternate accommodations and services due to segregation laws below the Mason-Dixon Line, relied on a guide called The Negro Motorist Green Book.",
+      "poster_path": "/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+      "release_date": "2018-11-16",
+      "title": "Green Book",
+      "video": false,
+      "vote_average": 8.3,
+      "vote_count": 1860,
+      "popularity": 309.866
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6JHYYbvoSuQ95ceGx8Oeg8zzAjg.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 480530,
+      "original_language": "en",
+      "original_title": "Creed II",
+      "overview": "Between personal obligations and training for his next big fight against an opponent with ties to his family's past, Adonis Creed is up against the challenge of his life.",
+      "poster_path": "/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg",
+      "release_date": "2018-11-21",
+      "title": "Creed II",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 1540,
+      "popularity": 142.253
+    }
+  ]
+}
