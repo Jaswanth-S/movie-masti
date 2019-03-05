@@ -84,7 +84,7 @@ async function trendingFun()
        // console.log(results['results'][i]['id']);
         addfavDiv.appendChild(favButton);
         //favButton.onclick = await fun(movieId ,results);
-        favButton.onclick= await addtofavourites.bind(null, trendResult,movieId);
+        favButton.onclick= await addtofavourites.bind(null,trendResult['results'][i]);
         favButton.href='/html/favourites.html';
 
     }  
